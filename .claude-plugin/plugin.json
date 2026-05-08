@@ -1,0 +1,7 @@
+{
+  "name": "skills-design",
+  "version": "0.1.0",
+  "description": "Brand-agnostic design system and artifact generators — 23 design templates (LinkedIn, Instagram, YouTube, Twitch, OBS, podcast, blog hero, business card, etc.) + screenshot-html PNG export.",
+  "author": { "name": "Shane Logsdon" },
+  "license": "MIT"
+}
