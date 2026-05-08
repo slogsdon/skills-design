@@ -1,3 +1,5 @@
+> **[shane.logsdon.io](https://shane.logsdon.io)** — writing and projects on agentic workflows, web standards, and payments engineering.
+
 # skills-design
 
 Brand-agnostic design system and 22 artifact generators for Claude Code, plus an HTML-to-PNG export utility. 23 skills total.
