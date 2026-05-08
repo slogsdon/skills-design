@@ -1,8 +1,8 @@
 # skills-design
 
-Brand-agnostic design system and artifact generators for Claude Code.
+Brand-agnostic design system and 22 artifact generators for Claude Code, plus an HTML-to-PNG export utility. 23 skills total.
 
-Install via the slogsdon-claude-code-config marketplace.
+Install via the [slogsdon-claude-code-config marketplace](https://github.com/slogsdon/claude-code-config).
 
 ## Skills
 
@@ -29,3 +29,7 @@ Install via the slogsdon-claude-code-config marketplace.
 - **design-youtube-channel-art** — YouTube channel art design
 - **design-youtube-thumbnail** — YouTube thumbnail design
 - **screenshot-html** — Export HTML artifacts as PNG screenshots
+
+## License
+
+MIT — see [LICENSE](LICENSE).
