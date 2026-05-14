@@ -1,6 +1,7 @@
 ---
 name: design-landing-page
-description: Generate a deliverable landing-page HTML file (NOT a screenshot artifact). 1440px design width, mobile-responsive (CSS-only, no JS). Sections: hero (full-viewport) + 3 feature blocks + CTA. Designed to be opened in a browser, iterated on, and deployed as-is. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "landing page for X", "marketing page", "product landing", "/landing-page".
+description: |
+  Generate a deliverable landing-page HTML file (NOT a screenshot artifact). 1440px design width, mobile-responsive (CSS-only, no JS). Sections: hero (full-viewport) + 3 feature blocks + CTA. Designed to be opened in a browser, iterated on, and deployed as-is. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "landing page for X", "marketing page", "product landing", "/landing-page".
 ---
 
 # Skill: landing-page

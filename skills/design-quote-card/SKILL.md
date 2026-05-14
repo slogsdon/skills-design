@@ -1,6 +1,7 @@
 ---
 name: design-quote-card
-description: Generate a pull-quote / insight card — TWO pixel-exact HTML canvases in one file: 1080×1080 (square, default) AND 1080×1920 (story variant). Text-dominant, Fraunces-led, no chrome. The quote IS the artifact. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "quote card for X", "pull quote", "insight card", "/quote-card".
+description: |
+  Generate a pull-quote / insight card — TWO pixel-exact HTML canvases in one file: 1080×1080 (square, default) AND 1080×1920 (story variant). Text-dominant, Fraunces-led, no chrome. The quote IS the artifact. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "quote card for X", "pull quote", "insight card", "/quote-card".
 ---
 
 # Skill: quote-card

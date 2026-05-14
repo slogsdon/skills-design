@@ -1,6 +1,7 @@
 ---
 name: design-speaker-bio-card
-description: Generate a conference / CFP speaker bio card — pixel-exact 800×600 main canvas + 400×200 compact variant in a single HTML file. Contains: name, title, headshot placeholder (circular 160px), 2-line bio, social handles, optional talk title. Used for CFP applications, conference apps, sponsor decks. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "speaker bio card", "CFP card", "conference bio", "/speaker-bio-card".
+description: |
+  Generate a conference / CFP speaker bio card — pixel-exact 800×600 main canvas + 400×200 compact variant in a single HTML file. Contains: name, title, headshot placeholder (circular 160px), 2-line bio, social handles, optional talk title. Used for CFP applications, conference apps, sponsor decks. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "speaker bio card", "CFP card", "conference bio", "/speaker-bio-card".
 ---
 
 # Skill: speaker-bio-card

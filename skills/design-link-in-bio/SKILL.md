@@ -1,6 +1,7 @@
 ---
 name: design-link-in-bio
-description: Generate a minimal single-column standalone HTML page — mobile-first at 375px width — for use as a link-in-bio destination. Contains: name/wordmark, short tagline, list of links (each a styled <a> block), social footer. Self-contained, works offline, deployable as-is to GitHub Pages or Netlify. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "link in bio", "linktree replacement", "bio page", "/link-in-bio".
+description: |
+  Generate a minimal single-column standalone HTML page — mobile-first at 375px width — for use as a link-in-bio destination. Contains: name/wordmark, short tagline, list of links (each a styled <a> block), social footer. Self-contained, works offline, deployable as-is to GitHub Pages or Netlify. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "link in bio", "linktree replacement", "bio page", "/link-in-bio".
 ---
 
 # Skill: link-in-bio

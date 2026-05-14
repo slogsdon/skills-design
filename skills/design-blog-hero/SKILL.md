@@ -1,6 +1,7 @@
 ---
 name: design-blog-hero
-description: Generate a blog post hero artifact — TWO pixel-exact HTML canvases in a single file: an Open Graph card (1200×630) for social meta tags AND an in-page hero (1440×600) for the article header. Both canvases share the same content + brand tokens; only the proportions differ. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "blog hero for X", "OG card for X", "open graph image", "in-page hero", "/blog-hero".
+description: |
+  Generate a blog post hero artifact — TWO pixel-exact HTML canvases in a single file: an Open Graph card (1200×630) for social meta tags AND an in-page hero (1440×600) for the article header. Both canvases share the same content + brand tokens; only the proportions differ. Reads ./design/<brand-slug>/DESIGN.md, tokens.css, and components.html. Triggers include "blog hero for X", "OG card for X", "open graph image", "in-page hero", "/blog-hero".
 ---
 
 # Skill: blog-hero
