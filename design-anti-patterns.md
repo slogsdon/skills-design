@@ -8,6 +8,15 @@ This file is the canonical anti-pattern list. Each platform skill references it 
 
 Before claiming any artifact is done, scan the section headers below and verify the artifact violates none. If you spot a new tell in real output that isn't listed here, add it — that's how this file maintains its bite.
 
+## Related canonical references
+
+This file is the **hard floor** — the list of things that are forbidden. It is paired with two sibling references that every skill also reads:
+
+- **`design-principles.md`** — the positive craft floor: typographic hierarchy, spatial rhythm, color theory, layout logic, visual tension. What good looks like, not just what bad looks like.
+- **`design-variation-sop.md`** — the procedure for choosing a distinct visual direction every invocation, with a named-aesthetic roster defined in concrete CSS terms.
+
+When any of those docs appears to permit something this file forbids (e.g. "layer gradients for atmosphere"), **this file wins.** Atmosphere/depth techniques are permitted only for directions that explicitly earn them and only in non-banned forms.
+
 ---
 
 ## 1. Universal — never, regardless of brand
@@ -26,6 +35,12 @@ These are non-negotiable across every artifact, every brand, every direction.
 - No medieval/heraldic imagery (Honeycomb-era observability cliché)
 - No graph-spaghetti backgrounds (real-looking charts as decoration, not data)
 - No filled-background callouts in body content (use a left rule + color hint instead)
+- **No indigo/violet/purple as the default accent or primary.** Specifically the `hsl(230–280)` family — Tailwind's `indigo-500` (`#6366F1`) and its neighbors — on a near-white surface. This is the single most-recognized AI tell (Tailwind's old default, now self-reinforcing in scraped training data). Allowed ONLY when `DESIGN-PLAN.md` names purple as a brand color with a stated reason, and even then never as a gradient.
+- **No purple→blue / "aurora" / gradient-mesh backgrounds, and no gradient-fill text.** This is the 2020–21 web look frozen into the training corpus. Backgrounds are a flat surface token unless the direction explicitly earns atmosphere (see `design-variation-sop.md`), and earned atmosphere is still never the banned gradient families.
+- **No glassmorphism by default** — frosted/translucent panels via `backdrop-filter: blur()`, especially layered over a gradient. If a surface must be translucent it carries an explicit opaque scrim guaranteeing WCAG-AA text contrast; absent that, forbidden.
+- **No ambient gradient "blobs"** — soft pastel or neon shapes floating behind the UI as background atmosphere. This is the orbs tell in softer clothing; the existing orbs ban covers it and so does this.
+- **No single global border-radius applied uniformly to every element** (the `rounded-lg`-on-everything tell). Radius is a deliberate, role-specific decision — a button, a card, an image, and an input do not all share one corner. See `design-principles.md`.
+- **No timid, evenly-weighted palette** where every color carries roughly equal visual weight at low overall contrast. The polished-neutral "safe SaaS" palette is itself a slop signal. Dominant surface + one sharp, sparingly-used accent — see `design-principles.md` and `design-variation-sop.md`.
 
 ## 2. Type — emphasis is a deliberate choice
 
@@ -36,6 +51,8 @@ The default AI-emphasis move is to italicize one word in a headline. The cousin 
 - **No more than 2 type families per artifact.** Mono labels count as a third only when used in their proper role as labels.
 - **No display-font flourishes that read as "designer trying"** (excessive ligatures, swash variants used decoratively, optical-size axis pushed to extremes for no reason).
 - **No center-aligned hero blocks** (unless the brand explicitly calls for symmetry).
+- **No Inter, Roboto, Arial, Open Sans, Lato, Helvetica, or OS system stack as the primary display or body family.** This is the AI-default sans monoculture — the fastest non-color tell. The primary family must be a deliberate, category-matched choice from the roster in `design-variation-sop.md` (Fraunces/Playfair/Crimson Pro for editorial; Clash Display/Satoshi/Cabinet Grotesk for startup; IBM Plex/Source Sans 3 for technical; JetBrains Mono/Fira Code for code; Bricolage Grotesque/Obviously/Newsreader for distinctive). Allowed only if `DESIGN-PLAN.md` names one of the banned families for a stated brand reason.
+- **Space Grotesk is a yellow flag, not a distinctive pick.** It has already over-converged across AI output. Permitted as a supporting/code face; never sold as "the distinctive choice."
 
 ## 3. Color — semantic over decorative
 
@@ -44,6 +61,8 @@ The default AI-emphasis move is to italicize one word in a headline. The cousin 
 - No "accent color on a single punctuation mark" (period, em-dash, slash). Clever the first time, AI-tell after that.
 - No "warm cream + dark ink + oxblood accent" specifically (Hollow's choice is now its own pattern; if a NEW brand goes this route, justify why and execute differently).
 - No "dark surface + green-accent + amber/red signals" specifically (Tail's choice; same justification rule).
+- **No evenly-distributed palette.** Dominant colors with sharp accents outperform timid, evenly-weighted palettes (Anthropic's own frontend-aesthetics guidance). One hue owns the large surfaces; the accent is small, saturated, and rare. If you can't point to the single dominant and the single accent, the palette is slop.
+- No indigo/violet primary (cross-listed from §1 — it is a color rule as much as a universal one).
 
 ## 4. Layout — architecture novelty must reach the inner blocks
 
@@ -54,6 +73,8 @@ The most common second-iteration failure: the OUTER architecture is novel (`inve
 - **No "top metadata row" disguised as functional context.** Mono-caps row at the top with category · date · version IS an eyebrow. Counts toward the eyebrow restriction. If you remove eyebrows but add a top mono-row, you haven't removed the chrome.
 - **No "brand mark always lives in lower-right."** Vary placement across artifacts in a brand. Lower-right · upper-left · embedded in copy · absent. If 3 artifacts in a brand all have the mark in the lower-right, the system has collapsed.
 - **No bento-grid layouts by default.** Bento grids became their own 2024-era cliché.
+- **No three-up icon-card feature grid as the default content section** — three boxes, each an icon in a circle/rounded-square above a bold label and two lines of body, uniform padding and radius across all three. This is the statistical median of every scraped Tailwind tutorial and the loudest layout tell. Feature/benefit content uses a non-card structure (numbered text blocks, a definition list, an asymmetric editorial run) unless the brand has a stated reason for cards.
+- **No "hero → three cards → CTA band" page skeleton** as the reflexive page architecture. If the page's bones match the median tutorial, the architecture has collapsed regardless of how the surface is styled.
 
 ## 5. Editorial cosplay — wrong genre tells
 
@@ -90,6 +111,14 @@ Add to this section as new categories produce their own voice patterns.
 - No countdown timers
 - No "join the waitlist for early access" with urgency framing
 - No "The wait is over"
+
+### Any category — calls to action
+The generic-CTA tell is as strong as the purple tell. A value-free button label says the copy was never written for this specific artifact.
+
+- No "Get Started", "Get started for free", "Learn More", "Sign Up", "Try it now", "Read More", "Discover More", "Explore" as the primary action. These name no action and carry no value.
+- The CTA names the actual next step and what the reader gets: "Read the 4-minute teardown", "See the December numbers", "Install the CLI", "Watch the 90-second demo". Specific verb + specific object.
+- No two-CTA hero (a filled primary next to a ghost "Learn more"). One action per surface — the accent earns its place on exactly one.
+- Authenticity over generic everywhere copy appears: real datelines (not "today"), the brand's actual voice (not aspirational filler like "Build the future" / "for the modern team"), concrete nouns over category abstractions.
 
 ## 7. Cross-artifact rules — system-level, not per-artifact
 
