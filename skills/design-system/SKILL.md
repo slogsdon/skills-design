@@ -46,13 +46,15 @@ If present, read it. If absent, ask the user 3 quick questions (visual direction
 
 Translate the plan's strategic decisions into specific token values. Use these heuristics by visual direction:
 
-**editorial** → display serif (Fraunces, Playfair, Source Serif), sans body (Inter, Söhne, Public Sans), mono accents (JetBrains Mono, Berkeley Mono); warm neutral surface (#fbfaf9-ish, not pure white); single ink color near-black; one accent used sparingly; generous letter-spacing on small uppercase labels (0.18em+); hairline rules over heavy borders; small radius (0–4px).
+**editorial** → display serif (Fraunces, Playfair Display, Crimson Pro, Newsreader), restrained sans body (Söhne, Public Sans, IBM Plex Sans), mono accents (JetBrains Mono, Berkeley Mono); warm neutral surface (#fbfaf9-ish, not pure white); single ink color near-black; one accent used sparingly; generous letter-spacing on small uppercase labels (0.18em+); hairline rules over heavy borders; small radius (0–4px).
 
-**technical** → mono-dominant or sans-only; cool neutrals or high-contrast; small radius (0–2px); compact density; single signal accent (often a saturated green or amber); grid-paper texture allowed; eyebrow labels mandatory.
+**technical** → mono-dominant or sans-only (IBM Plex, Source Sans 3, JetBrains Mono); cool neutrals or high-contrast; small radius (0–2px); compact density; single signal accent (often a saturated green or amber); grid-paper texture allowed; eyebrow labels mandatory.
 
-**bold** → heavy display sans (Söhne Breit, Inter Display 800+, Roobert), high-saturation palette, sharp contrast, large radius (8–16px) or zero radius (no middle), unapologetic scale jumps.
+**bold** → heavy display sans (Clash Display, Cabinet Grotesk, Satoshi, Söhne Breit, Roobert) at 800–900 against 100–200 body, high-saturation palette, sharp contrast, large radius (8–16px) or zero radius (no middle), unapologetic 4×+ scale jumps.
 
-**minimal** → single sans family (Inter, Söhne), 2–3 weights max, mostly grayscale with one quiet accent, large whitespace, no decorative elements, larger radius (8px+) for softness.
+**minimal** → single humanist sans family (Söhne, Public Sans, IBM Plex Sans), 2–3 weights max, mostly grayscale with one quiet accent, large whitespace, no decorative elements, larger radius (8px+) for softness. Valid only when chosen deliberately against the alternatives — never as the default (see `../design-variation-sop.md` Rule 1).
+
+> **Never** derive Inter, Roboto, Arial, Open Sans, Lato, Helvetica, or system stack as the primary family — that is the AI-default monoculture (anti-patterns §2). The fuller named-aesthetic roster (Swiss, brutalist, warm minimal, code/terminal, solarpunk, distinctive display, archival, etc.), each defined in concrete type/color/radius/density/layout terms, lives in `../design-variation-sop.md`. These four directions are the common cases; the roster is the full menu — pick from it deliberately, biased away from recent brands and away from minimal-by-default.
 
 **mixed** → resolve based on the two directions chosen and how they were described.
 
@@ -65,6 +67,12 @@ For each token category, pick one option from the **variation axes** below to av
 - **Spacing scale**: 4px-base (compact) | 6px-base (balanced) | 8px-base (spacious)
 
 State which option you picked from each axis at the top of `DESIGN.md` as a comment so the choice is reproducible.
+
+When deriving the actual token *values*, apply `../design-principles.md`:
+
+- **Typographic extremes** (§1): the type scale uses weight extremes (100/200 vs 800/900, not 400 vs 600) and 3×+ size jumps. Display weights should reach 700–900 or drop to 100–300 — do not cluster every level at 500–600. Pick one distinctive family and use it decisively; max 2 families.
+- **Dominant + sharp accent** (§3): one color owns the large surfaces, one saturated accent is used rarely. Reject any palette where you can't name the single dominant and the single accent. Draw the palette from a real reference (IDE theme, material, subject) — never the neutral SaaS center.
+- Before committing the system, sketch **three distinct directions** per `../design-variation-sop.md` Rule 3 and offer them as a one-line menu; generate the best-fit by default, all three only if asked.
 
 ### 3. Write DESIGN.md (Google spec format)
 
@@ -306,4 +314,4 @@ Then tell the user:
 - **Self-contained outputs.** `showcase.html` and downstream artifact files should work offline (Google Fonts `<link>` is the only allowed external).
 - **Spec-compliant.** YAML frontmatter must validate as the Google design.md schema (colors, typography, rounded, spacing, components groups; token references via `{path.to.token}`).
 - **Reproducible.** The variation choices comment block at the top of `DESIGN.md` must list the picked option per axis. Re-running with the same plan + same picks should produce equivalent output.
-- **Anti-pattern compliance.** Read `../design-anti-patterns.md` before generating tokens. The Do's and Don'ts section of `DESIGN.md` should pull in any brand-specific Hard NOs from `DESIGN-PLAN.md`, but the universals (no purple-cyan gradients, no drop shadows on text, no more than 2 type families, no accent-as-partner-to-primary) come from the shared reference and don't need to be restated.
+- **Anti-pattern compliance.** Read the three shared canonical references before generating tokens: `../design-anti-patterns.md` (hard floor — wins all conflicts), `../design-principles.md` (craft floor — typographic/spatial/color/layout/tension requirements), and `../design-variation-sop.md` (direction roster + offer-3 procedure). The Do's and Don'ts section of `DESIGN.md` should pull in any brand-specific Hard NOs from `DESIGN-PLAN.md`, but the universals (no purple-cyan gradients, no indigo/violet default, no drop shadows on text, no more than 2 type families, no Inter/Roboto/system primary, no accent-as-partner-to-primary) come from the shared references and don't need to be restated.

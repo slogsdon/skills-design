@@ -51,6 +51,8 @@ If the user said "design plan for X", derive the slug from X (kebab-case, lowerc
    - 2–3 reference brands or sites whose vibe you want to channel (URLs or names)
 ```
 
+The five directions above (editorial / technical / bold / minimal / mixed) are the common shorthands. The full named-aesthetic roster — Swiss, brutalist, warm minimal, bold geometric, code/terminal, solarpunk, distinctive display, archival, and more, each defined in concrete type/color/radius/density/layout terms — lives in `../design-variation-sop.md`. If the user's answer points at one of those, name it explicitly in the plan's Visual Direction section. **Do not let the plan default to "minimal" / "clean" / "modern"** — that is the absence of a direction, not a direction (variation-sop Rule 1). Pick deliberately, biased away from whatever recent brands chose.
+
 **Deep dive (8 questions, ~10 min) — only if user passes `--deep` or asks for it:**
 
 Add to the above:
@@ -153,4 +155,4 @@ After writing the file, tell the user:
 - 1 page max. If the file exceeds ~80 lines, cut.
 - If the user can't answer a question, write `TBD — needs decision before tokens` rather than guessing.
 - If `./design/<brand-slug>/DESIGN-PLAN.md` already exists, ask before overwriting.
-- **Universal anti-patterns** (purple-cyan gradients, orbs, italics-emphasis, etc.) live in `../design-anti-patterns.md` and apply to every brand. The Hard NOs section of the plan is for brand-SPECIFIC bans on top of those universals — don't restate the universals here.
+- **Universal anti-patterns** (purple-cyan gradients, indigo/violet default, orbs, italics-emphasis, Inter/Roboto/system primary, etc.) live in `../design-anti-patterns.md` and apply to every brand. The positive craft floor (`../design-principles.md`) and the direction roster + offer-3 procedure (`../design-variation-sop.md`) are the other two shared canonical references. The Hard NOs section of the plan is for brand-SPECIFIC bans on top of those universals — don't restate the universals here.
