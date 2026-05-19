@@ -127,6 +127,32 @@ For the masthead itself:
 >
 > Export PNG: open in browser → DevTools → set viewport to 600×200 → screenshot the `.canvas` element. Embed the PNG as `<img>` in your email at full resolution (the email client renders the image directly, no font/CSS dependencies).
 
+## Anti-Slop Rules
+
+Governed by three shared canonical references — read them, do not restate them:
+
+- **`../design-anti-patterns.md`** — the hard floor. Wins every conflict.
+- **`../design-principles.md`** — the craft floor (typographic hierarchy, spatial rhythm, color theory, layout logic, visual tension).
+- **`../design-variation-sop.md`** — the named-aesthetic roster + the procedure for varying every invocation.
+
+**Forbidden (fast scan — the references hold the full list):**
+
+- Indigo/violet/purple as default accent or primary — the `hsl(230–280)` family on a near-white surface. The single loudest AI tell.
+- Purple→blue / "aurora" / gradient-mesh backgrounds; gradient-fill text.
+- Glassmorphism without an explicit AA-contrast scrim; floating gradient "blobs" as atmosphere.
+- The three-up icon-card feature grid; the "hero → 3 cards → CTA" median skeleton.
+- One global border-radius on every element; timid evenly-weighted low-contrast palette.
+- Inter / Roboto / Arial / Open Sans / Lato / Helvetica / system as the primary family (Space Grotesk = yellow flag). Use a category-matched stack from the variation roster.
+- Value-free CTAs ("Get Started", "Learn More", "Sign Up"); the two-CTA hero. Name the real action and its value.
+
+**Required variation (every invocation):**
+
+- Make at least **two** intentional decisions that differ from the safe defaults (palette, layout structure, typographic voice, or spatial density) AND from the most recent artifact in this brand.
+- Never default to "clean / minimal / modern" — that is the absence of a direction (variation-sop Rule 1).
+- Sketch **three distinct directions**, offer them as a one-line menu, generate the best-fit by default, all three only if asked (variation-sop Rule 3).
+
+**Authenticity:** prefer specific over generic everywhere — real datelines (not "today"), the brand's actual voice (not "build the future" filler), concrete CTAs over placeholders.
+
 ## Rules
 
 - **Pixel exactness.** Canvas is 600×200 — the email-safe width. No rounding.
@@ -134,4 +160,4 @@ For the masthead itself:
 - **Word count discipline.** 6 words max for the masthead, 6 max for the tagline. Push back on the user if they exceed it.
 - **Token-pure.** Every visual value via `var(--*)` from the embedded tokens. Only literal pixel values allowed: `1px` for hairlines and the canvas dimensions.
 - **One masthead per file.** If the user wants alternates, make multiple files.
-- **Anti-pattern compliance.** This skill defers to `../design-anti-patterns.md` as the canonical anti-tell list. If you find a new tell in the output, add it there.
+- **Anti-pattern compliance.** This skill defers to three shared canonical references: `../design-anti-patterns.md` (the hard floor — wins every conflict), `../design-principles.md` (the craft floor), and `../design-variation-sop.md` (direction roster + offer-3 procedure). The anti-patterns file is the canonical anti-tell list. If you find a new tell in the output, add it there.

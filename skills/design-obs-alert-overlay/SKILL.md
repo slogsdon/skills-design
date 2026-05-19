@@ -237,6 +237,32 @@ After writing the file:
 - [ ] **Read `../design-anti-patterns.md` and verify the artifact violates none of its rules.** Pay special attention to §3 (no accent on a single punctuation mark — but accent on the dynamic name token IS allowed because it's doing semantic work, marking the new entity), §5 (no editorial-cosplay markers), and §8 (animation discipline)
 - [ ] Dynamic name span uses `--color-accent` ONLY when the name is the new entity (not as decoration)
 
+## Anti-Slop Rules
+
+Governed by three shared canonical references — read them, do not restate them:
+
+- **`../design-anti-patterns.md`** — the hard floor. Wins every conflict.
+- **`../design-principles.md`** — the craft floor (typographic hierarchy, spatial rhythm, color theory, layout logic, visual tension).
+- **`../design-variation-sop.md`** — the named-aesthetic roster + the procedure for varying every invocation.
+
+**Forbidden (fast scan — the references hold the full list):**
+
+- Indigo/violet/purple as default accent or primary — the `hsl(230–280)` family on a near-white surface. The single loudest AI tell.
+- Purple→blue / "aurora" / gradient-mesh backgrounds; gradient-fill text.
+- Glassmorphism without an explicit AA-contrast scrim; floating gradient "blobs" as atmosphere.
+- The three-up icon-card feature grid; the "hero → 3 cards → CTA" median skeleton.
+- One global border-radius on every element; timid evenly-weighted low-contrast palette.
+- Inter / Roboto / Arial / Open Sans / Lato / Helvetica / system as the primary family (Space Grotesk = yellow flag). Use a category-matched stack from the variation roster.
+- Value-free CTAs ("Get Started", "Learn More", "Sign Up"); the two-CTA hero. Name the real action and its value.
+
+**Required variation (every invocation):**
+
+- Make at least **two** intentional decisions that differ from the safe defaults (palette, layout structure, typographic voice, or spatial density) AND from the most recent artifact in this brand.
+- Never default to "clean / minimal / modern" — that is the absence of a direction (variation-sop Rule 1).
+- Sketch **three distinct directions**, offer them as a one-line menu, generate the best-fit by default, all three only if asked (variation-sop Rule 3).
+
+**Authenticity:** prefer specific over generic everywhere — real datelines (not "today"), the brand's actual voice (not "build the future" filler), concrete CTAs over placeholders.
+
 ## Rules
 
 - **Single file always.** OBS loads one URL; multiple files would defeat the purpose.
@@ -245,4 +271,4 @@ After writing the file:
 - **No sound.** This is a visual artifact. Audio belongs to the streaming software's alert config, not the overlay.
 - **Dynamic substitution via URL query.** Name, amount, count are passed in by the streaming tool — the artifact must accept them via `?name=...` parsing.
 - **Token-pure.** Same rules as other platform skills.
-- **Anti-pattern compliance.** This skill defers to `../design-anti-patterns.md` as the canonical anti-tell list.
+- **Anti-pattern compliance.** This skill defers to three shared canonical references: `../design-anti-patterns.md` (the hard floor — wins every conflict), `../design-principles.md` (the craft floor), and `../design-variation-sop.md` (direction roster + offer-3 procedure). The anti-patterns file is the canonical anti-tell list.
