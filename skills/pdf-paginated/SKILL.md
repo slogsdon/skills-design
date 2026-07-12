@@ -51,7 +51,7 @@ Plain document-flow HTML, NOT the `.canvas` convention:
 ## How to run
 
 ```bash
-node skills/pdf-paginated/scripts/pdf-paginated.mjs <dir> [--output <dir>] [--format Letter|A4] [--margin <css>] [--no-footer]
+node skills/pdf-paginated/scripts/pdf-paginated.mjs <dir> [--output <dir>] [--format Letter|A4] [--margin <css>] [--bleed <color>] [--no-footer]
 ```
 
 Flags:
@@ -60,8 +60,31 @@ Flags:
   `screenshots/`, `pdfs/`, and hidden dirs are skipped.
 - `--output <dir>` (default `<dir>/pdfs`): where PDFs are written, one per HTML file.
 - `--format` (default `Letter`): `Letter` or `A4`.
-- `--margin` (default `0.9in`): CSS length applied to all four sides.
-- `--no-footer`: drop the folio footer.
+- `--margin` (default `0.9in`): CSS length applied to all four sides. Ignored in bleed mode.
+- `--bleed <color>`: full-bleed page surface. See below.
+- `--no-footer`: drop the folio footer (in bleed mode the footer strip still paints).
+
+## Full-bleed backgrounds (`--bleed <color>`)
+
+Default mode gives white paper margins. If the document has a **committed
+background color** (e.g. a cream editorial page), that background floats as a card
+on white — the margins show through. `--bleed <color>` fixes this: it zeroes the
+left/right margins so the HTML background reaches the side edges, and paints the
+top and bottom margin strips `<color>` so every page is that color edge-to-edge,
+with a per-page inset and no white bands. The folio still renders in the bottom
+strip.
+
+In bleed mode the HTML owns **only its side text insets** (via `body` padding);
+the top/bottom insets are the painted strips. So the HTML should:
+
+- set the surface color on `html` and `body` with `print-color-adjust: exact`,
+- pad only the sides (e.g. `padding: 0.1in 0.95in 0.3in`), and
+- keep the reading column measured (`max-width`) and centered.
+
+```bash
+# cream editorial essay, full-bleed
+node skills/pdf-paginated/scripts/pdf-paginated.mjs . --output ./pdfs --bleed '#fbfaf9'
+```
 
 ## Prerequisites
 
